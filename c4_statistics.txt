@@ -1,0 +1,106 @@
+C4 Compiler Code Statistics
+===========================
+
+2. Lines of Code (LOC):
+   - Total LOC: 523
+   - Function LOC:
+     - next(): 84
+     - expr(): 147
+     - stmt(): 47
+     - main(): 181
+3. Cyclomatic Complexity:
+   - next(): 85
+   - expr(): 91
+   - stmt(): 15
+   - main(): 100
+
+4. functions and their sizes:
+   we have 4 funcations and
+   these are there sizes.
+   - next(): 84
+   - expr(): 147
+   - stmt(): 47
+   - main(): 181
+
+5. Number of Global Variables and Their Usage
+
+The Toatl number of global variables =14
+1. char *p: p = current position in source code.
+2. char *lp: lp = start of the current line for printing.
+3. char *data: Stores global variables and string literals.
+4. int *e : e = current position in generated code.
+5. int *le: le = end of code for printing.
+6. int *id: Points to the current identifier in the symbol table.
+7. int *sym: Symbol table for storing variables and functions.
+8. int tk: Current token.
+9. int ival: The value of the current token.
+10. int ty: The type of the current expression (INT, CHAR, PTR).
+11. int loc: Tracks local variable offsets in functions.
+12. int line: The current line number in the source code.
+13. int src: Flag for printing the source code and the assembly during execution.
+14. int debug: Flag for debugging output for each instruction.
+
+6. Number of unique tokens and their frequency
+The Total number of Tokens is 37 unique tokens. This is there frequencies.
+Num: 8 occurrences
+Fun: 3 occurrences
+Sys: 3 occurrences
+Glo: 3 occurrences
+Loc: 7 occurrences
+Id: 10 occurrences
+Char: 8 occurrences
+Else: 2 occurrences
+Enum: 2 occurrences
+If: 2 occurrences
+Int: 8 occurrences
+Return: 2 occurrences
+Sizeof: 2 occurrences
+While: 3 occurrences
+Assign: 13 occurrences
+Cond: 4 occurrences
+Lor: 3 occurrences
+Lan: 4 occurrences
+Or: 4 occurrences
+Xor: 4 occurrences
+And: 5 occurrences
+Eq: 4 occurrences
+Ne: 3 occurrences
+Lt: 5 occurrences
+Gt: 3 occurrences
+Le: 3 occurrences
+Ge: 3 occurrences
+Shl: 7 occurrences
+Shr: 3 occurrences
+Add: 6 occurrences
+Sub: 4 occurrences
+Mul: 11 occurrences
+Div: 3 occurrences
+Mod: 3 occurrences
+Inc: 18 occurrences
+Dec: 4 occurrences
+Brak: 3 occurrences
+
+7. Number of branches, loops, and their nesting levels.
+The total number of branches are 352. 149 of them being (else) the rest of 203 being (if).
+The total number of loops are 32. All of them are (while loops).
+The CNN value represents the level of branching and loops.
+- A higher CNN means the code is more complex. Higher complexity means more branches and loops.
+- The nesting level for our functions is very high, considering a CNN of 10-20 is deemed relativly complex, and anything above 51 is of high risk 
+ and unmanageable (McCabe complexity Metric). so our functions could be divied into four different catigories.
+  - next(): high risk
+   - expr(): high risk
+   - stmt(): complex
+   - main(): unmanageable
+8. Memory usage patterns (e.g., stack vs. heap allocation). 
+- using valgrind (heap usage):
+Heap memory is dynamic memory allocated by the programmer
+- 1.25 MB used from heap allocations. 
+- 6 malloc calls, 5 allocating 256KB, 1 allocating 1KB
+- the use of heap memory is high because the interpreter takes one large block then manages it instead of many smaller blocks.
+
+
+- Stack memory is used by local variables, function calls and for usage of expressions. valgrind unable to give stack memory specifics.
+
+
+  
+
