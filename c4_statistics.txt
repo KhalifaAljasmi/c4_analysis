@@ -97,6 +97,16 @@ Heap memory is dynamic memory allocated by the programmer
 - 1.25 MB used from heap allocations. 
 - 6 malloc calls, 5 allocating 256KB, 1 allocating 1KB
 - the use of heap memory is high because the interpreter takes one large block then manages it instead of many smaller blocks.
+-Leaks:
+==428== LEAK SUMMARY:
+==428==    definitely lost: 262,144 bytes in 1 blocks
+==428==    indirectly lost: 0 bytes in 0 blocks
+==428==      possibly lost: 0 bytes in 0 blocks
+==428==    still reachable: 1,048,576 bytes in 4 blocks
+==428==         suppressed: 0 bytes in 0 blocks
+
+Variables in the code were not free'd properly after usage resulting in leaks for most allocated variables (used test cases can be seen in the input.c file)
+
 
 
 - Stack memory is used by local variables, function calls and for usage of expressions. valgrind unable to give stack memory specifics.
